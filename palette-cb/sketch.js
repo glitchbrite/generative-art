@@ -100,8 +100,19 @@ function draw() {
   // noLoop()
 }
 
-function mouseClicked(){
-  
-  redraw()
+var onoff = 1
 
+function mouseClicked(){
+
+  if(onoff === 1){
+
+    noLoop()
+    onoff = 0
+
+  } else {
+
+    loop()
+    onoff = 1
+
+  }  
 }
