@@ -7,7 +7,9 @@ function setup() {
   createCanvas(1880, 1040, WEBGL)
   background(0)
   
- 
+ r = floor(random(255))
+ g = floor(random(255))
+ b = floor(random(255))
 
 }
 
@@ -15,9 +17,9 @@ setInterval(function(){
   // fill(0,0,0,10)
   // noFill()
   // rect(-500,-500,1000,1000)
-  r = r + floor(random(-5,6))
-  g = g + floor(random(-5,6))
-  b = b + floor(random(-5,6))
+  r = r + floor(random(-4,5))
+  g = g + floor(random(-4,5))
+  b = b + floor(random(-4,5))
 
   if(r < 5){
     r = 10
@@ -77,12 +79,24 @@ function draw() {
 
   var v = createVector(x, y)
   grid.push(v)
+
+  if(grid.length >= 100){
+    grid.shift()
+  }
   
+  // fill(r,g,b,2)
+  // noStroke()
+  // push()
+  // translate(grid[grid.length-1].x,grid[grid.length-1].y, -100)
+  // box(random(40,200),random(40,100),random(40,100))
+  // pop()
+
+
   fill(r,g,b,100)
   // noFill()
   stroke(r,g,b,floor(random(10)))
   // noStroke()
-  
+
   push()
   translate(grid[grid.length-1].x,grid[grid.length-1].y)
   rotateX(frameCount * 0.01);
@@ -92,15 +106,15 @@ function draw() {
   box(r/randomSize,g/randomSize,b/randomSize)
   pop()
   console.log(grid.length)
-  if(grid.length >= 42000){
-    noLoop()
-  }
+  // if(grid.length >= 4200){
+  //   noLoop()
+  // }
 
 
-  if(randomSize > 300){
+  if(randomSize > 100){
     randomSize = randomSize - 20
   }
-  if(randomSize < 50){
+  if(randomSize < -100){
     randomSize = randomSize + 10
   }
 
