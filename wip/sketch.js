@@ -1,118 +1,250 @@
 
+// let myFont;
+// function preload() {
+//   myFont = loadFont('arial.ttf');
+// }
+
 function setup() {
 
   document.body.style.backgroundColor = "rgb(57, 57, 57)";
   // document.body.style.marginTop = "10px";
 
-  createCanvas(1880, 1040, WEBGL)
+  createCanvas(1880, 1040)
   background(0)
   
- r = 127
- g = 127
- b = 127
+  fill(255)
+  textStyle(BOLD);
+  textSize(200)
+
+  text(bank[floor(random(bank.length))],42,300)
+  text(bank[floor(random(bank.length))],42,600)
+  text(bank[floor(random(bank.length))],42,900)
+
 
 }
 
-setInterval(function(){
-  // fill(0,0,0,10)
-  // noFill()
-  // rect(-500,-500,1000,1000)
-  r = r + floor(random(-5,6))
-  g = g + floor(random(-5,6))
-  b = b + floor(random(-5,6))
-
-  if(r < 5){
-    r = 10
-  }
-  if(r > 250){
-    r = 245
-  }
-  if(g < 5){
-    g = 10
-  }
-  if(g > 250){
-    g = 245
-  }
-  if(b < 5){
-    b = 10
-  }
-  if(b > 250){
-    b = 245
-  }
-  // var rgb = [r,g,b]
-  // console.log(rgb)
-},100);
 // setInterval(function(){
-
-//   fill(0)
-//   rect(-(width/2),-(height/2),width,height)
   
-// },100000);
+// },100);
 
-var r = 127
-var g = 127
-var b = 127
+var bank = [
+"	Achieve	"	,
+"	Act	"	,
+"	Admiration	"	,
+"	Admire	"	,
+"	Advance	"	,
+"	Adventurous	"	,
+"	Advice	"	,
+"	Advise	"	,
+"	Advocate	"	,
+"	Affirm	"	,
+"	Aid	"	,
+"	Ambitious	"	,
+"	Animate	"	,
+"	Appreciate	"	,
+"	Assist	"	,
+"	Assistance	"	,
+"	Assure	"	,
+"	Attitude	"	,
+"	Back	"	,
+"	Belief	"	,
+"	Believe	"	,
+"	Boost	"	,
+"	Build	"	,
+"	Caring	"	,
+"	Catalyst	"	,
+"	Challenge	"	,
+"	Champion	"	,
+"	Cheer	"	,
+"	Coax	"	,
+"	Comfort	"	,
+"	Commit	"	,
+"	Commitment	"	,
+"	Compassion	"	,
+"	Compliment	"	,
+"	Confidence	"	,
+"	Conquer	"	,
+"	Continue	"	,
+"	Courage	"	,
+"	Create	"	,
+"	Dare	"	,
+"	Dedicate	"	,
+"	Deliver	"	,
+"	Determination	"	,
+"	Dream	"	,
+"	Drive	"	,
+"	Embolden	"	,
+"	Empower	"	,
+"	Empowering	"	,
+"	Empowerment	"	,
+"	Encourage	"	,
+"	Encouragement	"	,
+"	Encouraging	"	,
+"	Endorse	"	,
+"	Endure	"	,
+"	Energy	"	,
+"	Enjoyment	"	,
+"	Enrich	"	,
+"	Enthusiasm	"	,
+"	Enthusiastic	"	,
+"	Envision	"	,
+"	Excellence	"	,
+"	Experience	"	,
+"	Faith	"	,
+"	Faithful	"	,
+"	Fearless	"	,
+"	Fighter	"	,
+"	Finisher	"	,
+"	Fire	"	,
+"	Fix	"	,
+"	Focus	"	,
+"	Forgive	"	,
+"	Fortify	"	,
+"	Forward	"	,
+"	Foster	"	,
+"	Freedom	"	,
+"	Fuel	"	,
+"	Fulfilment	"	,
+"	Further	"	,
+"	Glory	"	,
+"	Happiness	"	,
+"	Happy	"	,
+"	Hearten	"	,
+"	Help	"	,
+"	Honesty	"	,
+"	Honor	"	,
+"	Hope	"	,
+"	Humble	"	,
+"	Humility	"	,
+"	Imagination	"	,
+"	Imagine	"	,
+"	Improve	"	,
+"	Incentive	"	,
+"	Incite	"	,
+"	Ineffable	"	,
+"	Influence	"	,
+"	Initiative	"	,
+"	Inspiration	"	,
+"	Inspire	"	,
+"	Inspiring	"	,
+"	Integrity	"	,
+"	Interest	"	,
+"	Interested	"	,
+"	Invigorate	"	,
+"	Jest	"	,
+"	Joy	"	,
+"	Justify	"	,
+"	Kind	"	,
+"	Kindness	"	,
+"	Knowledge	"	,
+"	Live	"	,
+"	Laugh	"	,
+"	Love	"	,
+"	Lead	"	,
+"	Leading	"	,
+"	Learn	"	,
+"	Life	"	,
+"	Limitless	"	,
+"	Loving	"	,
+"	Loyal	"	,
+"	Meaning	"	,
+"	Meaningful	"	,
+"	Mentor	"	,
+"	Mindful	"	,
+"	Mindset	"	,
+"	Mission	"	,
+"	Momentum	"	,
+"	Motivate	"	,
+"	Motivated	"	,
+"	Motivation	"	,
+"	Move	"	,
+"	Movement	"	,
+"	Navigate	"	,
+"	Nurture	"	,
+"	Okay	"	,
+"	Opportunity	"	,
+"	Optimistic	"	,
+"	Optimize	"	,
+"	Overcome	"	,
+"	Passion	"	,
+"	Patience	"	,
+"	Peace	"	,
+"	Perseverance	"	,
+"	Persevere	"	,
+"	Persist	"	,
+"	Persistence	"	,
+"	Persuade	"	,
+"	Positive	"	,
+"	Possible	"	,
+"	Possibilities	"	,
+"	Power	"	,
+"	Powerful	"	,
+"	Practice	"	,
+"	Press	"	,
+"	Pressure	"	,
+"	Pride	"	,
+"	Prioritize	"	,
+"	Prod	"	,
+"	Promote	"	,
+"	Prompt	"	,
+"	Push	"	,
+"	Rally	"	,
+"	Reach	"	,
+"	Reassure	"	,
+"	Recommend	"	,
+"	Remind	"	,
+"	Respect	"	,
+"	Revitalize	"	,
+"	Rise	"	,
+"	Risk	"	,
+"	Satisfaction	"	,
+"	Sharing	"	,
+"	Skilful	"	,
+"	Skill	"	,
+"	Spirit	"	,
+"	Stimulate	"	,
+"	Stimulus	"	,
+"	Stir	"	,
+"	Strength	"	,
+"	Strengthen	"	,
+"	Strong	"	,
+"	Succeed	"	,
+"	Success	"	,
+"	Suggest	"	,
+"	Support	"	,
+"	Sustain	"	,
+"	Sway	"	,
+"	Teach	"	,
+"	Teachable	"	,
+"	Tried	"	,
+"	Trust	"	,
+"	Trustworthy	"	,
+"	Try	"	,
+"	Understand	"	,
+"	Understanding	"	,
+"	Understood	"	,
+"	Uplift	"	,
+"	Urge	"	,
+"	Value	"	,
+"	Values	"	,
+"	Versatile	"	,
+"	Vitalize	"	,
+"	Vulnerability	"	,
+"	Welcome	"	,
+"	Will	"	,
+"	Willpower	"	,
+"	Winner	"	,
+"	Wisdom	"	,
+"	Wise	"	,
+"	Worthy	"	,
+"	Yet	"	,
 
-var xstart = -940
-var ystart = -520
-var spacing = 90
-var xorigin = xstart
-var yorigin = ystart
-
-var x = 0
-var y = 0
-var movex = 0
-var movey = 0
-var grid = []
-
+  ]
 
 function draw() {
-  movex = floor(random(-42,43))
-  movey = floor(random(-42,43))
-  x = x + movex
-  y = y + movey
-
-  var v = createVector(x, y)
-  grid.push(v)
-
-  if(grid.length >= 100){
-    grid.shift()
-  }
   
 
 
-  fill(r,g,b, 222)
-  // noFill()
-  stroke(r,g,b,floor(random(10)))
-  // noStroke()
-
-  push()
-  translate(grid[grid.length-1].x,grid[grid.length-1].y)
-  // rotateX(frameCount * 0.01);
-  // rotateY(frameCount * 0.01);
-  
-  box(r/4,g/4,b/4)
-  pop()
-
-
-  console.log(grid.length)
-  // if(grid.length >= 4200){
-  //   noLoop()
-  // }
-
-
-  if(x > ((width/2)-10)){
-    x = x - 10
-  }
-  if(y > ((height/2)-10)){
-    y = y - 10
-  }
-  if(x < -((width/2)-10)){
-    x = x + 10
-  }
-  if(y < -((height/2)-10)){
-    y = y + 10
-  }
 }
 
 var onoff = 1
